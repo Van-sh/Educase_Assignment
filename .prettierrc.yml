@@ -1,0 +1,8 @@
+overrides:
+  - files:
+      - "*.yaml"
+      - "*.yml"
+    options:
+      tabWidth: 2
+printWidth: 100
+tabWidth: 3

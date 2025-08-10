@@ -1,0 +1,45 @@
+{
+   "name": "educase-assignment",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "dev": "tsx watch --clear-screen=false ./src/index.ts",
+      "build": "rm -rf ./dist && npx tsc",
+      "prod": "node ./dist/index.js",
+      "format": "prettier --write \"**/*.{js,ts,json,yml}\"",
+      "typecheck": "tsc --noEmit",
+      "db:generate": "drizzle-kit generate",
+      "db:migrate": "drizzle-kit migrate",
+      "db:push": "drizzle-kit push",
+      "db:studio": "drizzle-kit studio"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "type": "module",
+   "dependencies": {
+      "@tidbcloud/serverless": "^0.2.0",
+      "arktype": "^2.1.20",
+      "cors": "^2.8.5",
+      "dotenv": "^17.2.1",
+      "drizzle-orm": "^0.44.4",
+      "express": "^5.1.0",
+      "morgan": "^1.10.1"
+   },
+   "devDependencies": {
+      "@types/compression": "^1.8.1",
+      "@types/cors": "^2.8.19",
+      "@types/express": "^5.0.3",
+      "@types/express-serve-static-core": "^5.0.7",
+      "@types/morgan": "^1.9.10",
+      "@types/node": "^24.2.1",
+      "compression": "^1.8.1",
+      "drizzle-kit": "^0.31.4",
+      "mysql2": "^3.14.3",
+      "prettier": "^3.6.2",
+      "tsx": "^4.20.3",
+      "typescript": "^5.9.2"
+   },
+   "packageManager": "pnpm@10.14.0"
+}
