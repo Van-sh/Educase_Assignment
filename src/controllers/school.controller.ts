@@ -33,8 +33,8 @@ export async function listSchools(req: Request, res: Response) {
 }
 
 export const addSchoolSchema = type({
-   name: "string < 100",
-   address: "string < 255",
+   name: "0 < string < 100",
+   address: "0 < string < 255",
    latitude: "-90 <= number <= 90",
    longitude: "-180 <= number <= 180",
 });
@@ -55,7 +55,7 @@ export async function addSchool(req: Request<ParamsDictionary, any, TSchoolInser
       return res.status(400).json({ error: "School Already exists" });
    }
 
-   await db.insert(schools).values(req.body);
+   const newSchoolId = await db.insert(schools).values(req.body).$returningId();
 
-   res.json({ msg: "School was added", school: req.body });
+   res.json({ message: "School was added", data: newSchoolId[0] });
 }
